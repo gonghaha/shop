@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<table border="1px" cellspacing="0" cellpadding="0">
+    <tr>
+        <th>球队1</th>
+        <th>比分</th>
+        <th>球队2</th>
+        <th>时间</th>
+        <th>操作</th>
+    </tr>
+    <?php
+    foreach ($match_list as $key =>$value){ ?>
+    <tr>
+        <td><a href="./index.php?c=Team&a=list"><?php echo $value['t1_name'] ?></a></td>
+        <td><?php echo $value['t1_score']; echo ":";echo $value['t2_score'] ?></td>
+        <td><a href="./index.php?c=Team&a=list"><?php echo $value ['t2_name'] ?></a></td>
+        <td><?php echo $value['tim'] ?></td>
+        <td><a href="./index.php?c=Match&a=remove">删除</a></td>
+    </tr>
+    <?php
+    }
+    ?>
+</table>
+
+</body>
+</html>
